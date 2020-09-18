@@ -3,7 +3,7 @@ package BOJ;
 import java.util.Scanner;
 import java.util.HashMap;
 
-public class p2457 {
+public class bj2457 {
 
     public static int getCalendarDate(String month, String date) {
         return (Integer.parseInt(month) * 100) + Integer.parseInt(date);
