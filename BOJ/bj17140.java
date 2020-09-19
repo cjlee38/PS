@@ -6,33 +6,29 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class bj17140 { // need to be renamed as main
-    static int r;
-    static int c;
-    static int k;
 
-    static int[][] map = new int[101][101];
+    static Solution init() throws IOException{
 
 
-    static void init() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        r = Integer.parseInt(st.nextToken()) - 1;
-        c = Integer.parseInt(st.nextToken()) - 1;
-        k = Integer.parseInt(st.nextToken());
+        int r = Integer.parseInt(st.nextToken()) - 1;
+        int c = Integer.parseInt(st.nextToken()) - 1;
+        int k = Integer.parseInt(st.nextToken());
 
-
+        int[][] map = new int[101][101];
         for (int i = 0; i < 3; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < 3; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
+
+        return new Solution(r, c, k, map);
     }
 
     public static void main(String[] args) throws IOException {
-        init();
-
-        Solution s = new Solution(r, c, k, map);
+        Solution s = init();
         int answer = s.run();
         System.out.println(answer);
 
@@ -44,9 +40,6 @@ class Solution {
     private int c;
     private int k;
     private int[][] map;
-    private int rSize = 3;
-    private int cSize = 3;
-    private int time = 0;
 
     public Solution(int r, int c, int k, int[][] map) {
         this.r = r;
@@ -56,6 +49,9 @@ class Solution {
     }
 
     public int run() {
+        int time = 0;
+        int rSize = 3;
+        int cSize = 3;
         while(true) {
             if (time > 100) {
                 time = -1;
@@ -65,9 +61,9 @@ class Solution {
                 break;
             } else {
                 if (rSize >= cSize) {
-                    cSize = operateR();
+                    cSize = operateR(rSize, cSize);
                 } else {
-                    rSize = operateC();
+                    rSize = operateC(rSize, cSize);
                 }
             }
             time++;
@@ -76,7 +72,6 @@ class Solution {
     }
 
     private PriorityQueue<Number> countValues(int[] values, int size) {
-//        System.out.println("count Value");
         Map<Integer, Integer> KV = new HashMap<>();
         PriorityQueue<Number> Q = new PriorityQueue<>();
         for(int i=0; i<size; i++) {
@@ -87,14 +82,13 @@ class Solution {
 
         for(Integer key : KV.keySet()) {
             Q.offer(new Number(key, KV.get(key)));
-//            System.out.println("key : " + key.toString() + "value : " + KV.get(key).toString());
         }
 
         return Q;
 
     }
 
-    private int operateR() {
+    private int operateR(int rSize, int cSize) {
         int newCSize = 0;
         for (int i = 0; i < rSize; i++) {
             PriorityQueue<Number> PQ = countValues(map[i], cSize);
@@ -115,7 +109,7 @@ class Solution {
     }
 
 
-    private int operateC() {
+    private int operateC(int rSize, int cSize) {
         int newRSize = 0;
         for(int i=0; i<cSize; i++) {
             int[] col = new int[rSize];
