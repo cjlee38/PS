@@ -7,7 +7,7 @@ import java.util.*;
 
 public class bj17140 { // need to be renamed as main
 
-    static Solution init() throws IOException{
+    static Solution17140 init() throws IOException{
 
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,24 +24,24 @@ public class bj17140 { // need to be renamed as main
             }
         }
 
-        return new Solution(r, c, k, map);
+        return new Solution17140(r, c, k, map);
     }
 
     public static void main(String[] args) throws IOException {
-        Solution s = init();
+        Solution17140 s = init();
         int answer = s.run();
         System.out.println(answer);
 
     }
 }
 
-class Solution {
+class Solution17140 {
     private int r;
     private int c;
     private int k;
     private int[][] map;
 
-    public Solution(int r, int c, int k, int[][] map) {
+    public Solution17140(int r, int c, int k, int[][] map) {
         this.r = r;
         this.c = c;
         this.k = k;
