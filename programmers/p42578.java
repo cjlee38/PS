@@ -27,4 +27,6 @@ public class p42578 {
 
         return answer - 1;
     }
+
+
 }
