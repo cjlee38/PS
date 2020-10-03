@@ -55,8 +55,8 @@ class Solution17144 {
 
         for (int i=0; i<T; i++) {
             dustSpread();
-            posA.clean(map, AirCleaner.COUNTER_CLOCKWISE);
-            posB.clean(map, AirCleaner.CLOCKWISE);
+            posA.clean(map);
+            posB.clean(map);
         }
 
         answer = getResult();
@@ -70,9 +70,9 @@ class Solution17144 {
             for (int j=0; j<C; j++) {
                 if (map[i][j] == -1) {
                     if (number == 0) {
-                        AC = new AirCleaner(i, j);
+                        AC = new AirCleaner(i, j, AirCleaner.CLOCKWISE);
                     } else {
-                        AC = new AirCleaner(i+1, j);
+                        AC = new AirCleaner(i+1, j, AirCleaner.COUNTER_CLOCKWISE);
                     }
                     return AC;
                 }
@@ -158,14 +158,6 @@ class Solution17144 {
 
         return result;
     }
-    public void print() {
-        for(int i=0; i<map.length; i++) {
-            for(int j=0; j<map[0].length; j++) {
-                System.out.print(map[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
 
 }
 
@@ -176,17 +168,19 @@ class AirCleaner {
 
     final private int X;
     final private int Y;
-    public AirCleaner(int x, int y) {
+    final private int clockwise;
+    public AirCleaner(int x, int y, int clockwise) {
         X = x;
         Y = y;
+        this.clockwise = clockwise;
     }
 
-    public void clean(int[][] map, int clockwise) {
+    public void clean(int[][] map) {
         int x = X;
         int y = Y+1;
         int R = map.length;
         int C = map[0].length;
-        int cur = map[x][y];
+        int cur;
         int prev = map[x][y-1];
 
         // go right

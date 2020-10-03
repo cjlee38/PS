@@ -1,7 +1,7 @@
 package programmers;
 
 
-public class Main {
+public class p12937 {
     public static void main(String[] args) {
 
         int num = 3;
