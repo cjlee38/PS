@@ -16,9 +16,9 @@ public class p42579 {
     }
 
     public static int[] solution(String[] genres, int[] plays) {
-        Map<String, Integer> gMap = new HashMap<>();
-        Map<Integer, String> rgMap = new HashMap<>();
-        Map<String, Song> sMap = new HashMap<>();
+        Map<String, Integer> gMap = new HashMap<>(); // genre map
+        Map<Integer, String> rgMap = new HashMap<>(); // reversed genre map
+        Map<String, Song> sMap = new HashMap<>(); // song map
         List<Integer> indices = new ArrayList<>();
 
         for(int i = 0; i < genres.length; i++) {

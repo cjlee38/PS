@@ -1,7 +1,6 @@
 package programmers;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 // 프로그래머스 - 단속카메라
 public class p42884 {
@@ -23,13 +22,11 @@ public class p42884 {
             else return o1[0] < o2[0] ? 1 : -1;
         });
 
-
         int std = routes[0][0];
         int answer = 1;
         for (int i=1; i<routes.length; i++) {
-            if (routes[i][1] >= std) {
-                continue;
-            } else {
+            System.out.println("std : " + std);
+            if (routes[i][1] < std) {
                 std = routes[i][0];
                 answer++;
             }
@@ -40,17 +37,4 @@ public class p42884 {
         return answer;
     }
 
-
-
-
-
-
-    public static void print(int[][] costs) {
-        for(int i=0; i< costs.length; i++) {
-            for (int j=0; j<costs[0].length; j++) {
-                System.out.print(costs[i][j]);
-            }
-            System.out.println();
-        }
-    }
 }
