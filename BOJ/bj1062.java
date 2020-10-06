@@ -81,7 +81,7 @@ class Solution1062 {
         }
 
 
-        for (int i=0; i<restAphbs.length; i++) {
+        for (int i=idx; i<restAphbs.length; i++) {
             char cur = restAphbs[i].charAt(0);
             aphbs[cur - SMALL_ASCII] = true;
             recursive(middleWords, restAphbs, idx+1, count+1);
