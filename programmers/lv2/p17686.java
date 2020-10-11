@@ -11,7 +11,6 @@ public class p17686 {
     }
 
     public static String[] solution(String[] files) {
-
         Arrays.sort(files, (o1, o2) -> {
             String o1Header = o1.split("\\d+")[0].toLowerCase();
             String o2Header = o2.split("\\d+")[0].toLowerCase();
