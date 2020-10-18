@@ -1,8 +1,4 @@
-package programmers.unresolved;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package programmers.unsolved;
 
 // 프로그래머스 - 조이스틱
 public class _p42860 {

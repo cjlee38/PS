@@ -1,4 +1,4 @@
-package programmers.unresolved;
+package programmers.unsolved;
 
 import java.util.*;
 
