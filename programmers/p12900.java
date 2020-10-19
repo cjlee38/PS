@@ -1,5 +1,6 @@
 package programmers;
 
+// 프로그래머스 - 2 x n 타일링
 public class p12900 {
     public static void main(String[] args) {
         int n = 4;

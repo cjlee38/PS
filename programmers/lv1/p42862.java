@@ -1,5 +1,6 @@
-package programmers;
+package programmers.lv1;
 
+// 프로그래머스 - 체육복
 public class p42862 {
     public static void main(String[] args) {
         int n = 5;

@@ -1,7 +1,8 @@
-package programmers;
+package programmers.lv1;
 
 import java.util.Arrays;
 
+// K 번째 수
 public class p42748 {
     public static void main(String[] args) {
         int[] array = {1, 5, 2, 6, 3, 7, 4};

@@ -2,6 +2,7 @@ package programmers.lv2;
 
 import java.util.Arrays;
 
+// 프로그래머스 - 쿼드 압축 후 세기
 public class p68936 {
     static int[][] board;
     static int[] answer;

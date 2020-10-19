@@ -1,5 +1,6 @@
 package programmers;
 
+// 가장 큰 정사각형 찾기
 public class p12905 {
 
     public static void main(String[] args) {

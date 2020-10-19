@@ -1,9 +1,11 @@
-package programmers;
+package programmers.lv1;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
+// 프로그래머스 - 두 개 뽑아서 더하기
 
 public class p68644 {
     public static void main(String[] args) {
