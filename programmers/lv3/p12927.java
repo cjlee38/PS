@@ -1,6 +1,5 @@
 package programmers.lv3;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
@@ -18,8 +17,8 @@ public class p12927 {
         long answer = 0;
         PriorityQueue<Integer> PQ = new PriorityQueue<>(Collections.reverseOrder());
 
-        for (int i = 0; i < works.length; i++) {
-            PQ.offer(works[i]);
+        for (int work : works) {
+            PQ.offer(work);
         }
 
         for (int i = 0; i < n; i++) {
