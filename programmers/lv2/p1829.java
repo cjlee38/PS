@@ -1,4 +1,7 @@
-package programmers;
+package programmers.lv2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class p1829 {
     public static void main(String[] args) {
@@ -16,6 +19,8 @@ public class p1829 {
         int[] result = solution(m, n, picture);
         System.out.println(result[0]);
         System.out.println(result[1]);
+
+        List<Integer> list = new ArrayList<Integer>();
     }
 
     public static int[] solution(int m, int n, int[][] picture) {

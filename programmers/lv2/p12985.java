@@ -1,5 +1,6 @@
 package programmers.lv2;
 
+// 프로그래머스 - 예상대진표
 public class p12985 {
     public static void main(String[] args) {
         int n = 8;
