@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lv2;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -15,17 +15,13 @@ public class p42626 {
 
     public static int solution(int[] scoville, int K) {
         int count = 0;
-        int prev;
-        int cur;
 
-        PriorityQueue<Integer> foods = Arrays.stream(scoville).boxed().collect(Collectors.toCollection(PriorityQueue::new));
-        while(foods.size() > 1 && foods.peek() < K) {
-            prev = foods.poll();
-            cur = foods.poll() * 2;
-            System.out.println(prev + " " + cur);
+        PriorityQueue<Integer> foods = Arrays.stream(scoville)
+                .boxed()
+                .collect(Collectors.toCollection(PriorityQueue::new));
 
-
-            foods.offer(prev+cur);
+        while (foods.size() > 1 && foods.peek() < K) {
+            foods.offer(foods.poll() + foods.poll() * 2);
             count++;
         }
 
