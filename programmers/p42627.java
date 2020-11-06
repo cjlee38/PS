@@ -3,6 +3,7 @@ package programmers;
 import java.util.*;
 
 class p42627 {
+
     public static int solution(int[][] jobs) {
 
         Arrays.sort(jobs, (o1, o2) -> {
@@ -12,8 +13,8 @@ class p42627 {
             return 1;
         });
 
-        PriorityQueue<int[]> queue = new PriorityQueue<int[]>((o1, o2) -> {
-            if(o1[1] < o2[1]){
+        PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> {
+            if (o1[1] < o2[1]) {
                 return -1;
             }
             return 1;
