@@ -19,9 +19,10 @@ public class p49191 {
     }
 
     public int solution(int n, int[][] results) {
-        int answer = 0;
         Map<Integer, List<Integer>> winnerMap = initGames(n, results, true);
         Map<Integer, List<Integer>> loserMap = initGames(n, results, false);
+
+        int answer = 0;
 
         for (int i = 1; i <= n; i++) {
             boolean[] visited = new boolean[n];
@@ -29,8 +30,10 @@ public class p49191 {
             recursive(loserMap, visited, i);
 
             int battleCount = countBattle(visited);
-            if (battleCount == (n - 1)) answer = answer + 1;
+            if (battleCount == (n - 1)) answer++;
         }
+
+
 
         return answer;
     }
@@ -48,20 +51,13 @@ public class p49191 {
 
     private int countBattle(boolean[] visited) {
         int count = 0;
-
-        for (int i = 0; i < visited.length; i++)
-            if (visited[i]) count++;
-
+        for (boolean b : visited) if (b) count++;
         return count;
     }
 
     private Map<Integer, List<Integer>> initGames(int n, int[][] results, boolean isWin) {
-        int WINNER = 0;
-        int LOSER = 1;
-        if (!isWin) {
-            WINNER = 1;
-            LOSER = 0;
-        }
+        int WINNER = isWin ? 0 : 1;
+        int LOSER = isWin ? 1 : 0;
         Map<Integer, List<Integer>> map = new HashMap<>();
 
         for (int i = 1; i <= n; i++) {
