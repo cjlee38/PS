@@ -20,7 +20,7 @@ import java.util.*;
 // 소풍
 public class Picnic {
     public static void main(String[] args) throws IOException {
-        List<Picnic_solution> problems = new ArrayList<>();
+        List<Solution> problems = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader((System.in)));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int c = Integer.parseInt(st.nextToken());
@@ -42,23 +42,23 @@ public class Picnic {
             }
 
 
-            problems.add(new Picnic_solution(n, m, areFriends));
+            problems.add(new Solution(n, m, areFriends));
 
         }
 
 
-        for (Picnic_solution problem : problems) {
+        for (Solution problem : problems) {
             int answer = problem.run();
             System.out.println(answer);
         }
     }
 
-    static class Picnic_solution {
+    static class Solution {
         private int n;
         private int m;
         private boolean[][] areFriends;
 
-        public Picnic_solution(int n, int m, boolean[][] areFriends) {
+        public Solution(int n, int m, boolean[][] areFriends) {
             this.n = n;
             this.m = m;
             this.areFriends = areFriends;
