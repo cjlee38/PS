@@ -12,14 +12,14 @@ public class Clocksync {
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int loop = Integer.parseInt(st.nextToken());
-        Solution[] solutions = new Solution[loop];
+        List<Solution> solutions = new ArrayList<>();
 
         for (int i = 0; i < loop; i++) {
             int[] clockwises = Arrays.stream(br.readLine().split(" "))
                     .mapToInt(Integer::parseInt)
                     .toArray();
 
-            solutions[i] = new Solution(clockwises);
+            solutions.add(new Solution(clockwises));
 
         }
 
@@ -34,17 +34,17 @@ public class Clocksync {
         private static final int INF = 987654321;
         private static final int NUM_OF_CLOCKS = 16;
         private static final int NUM_OF_SWITCHES = 10;
-        private static final int[][] linked = new int[][] {
-            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1},
-            {1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0},
-            {1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
-            {0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1},
-            {0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0}
+        private static final int[][] linked = new int[][]{
+                {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0},
+                {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1},
+                {1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0},
+                {1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+                {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+                {0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1},
+                {0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0}
         };
 
         private int[] clockwises;
@@ -70,22 +70,21 @@ public class Clocksync {
             for (int i = 0; i < NUM_OF_CLOCKS; i++) {
                 if (linked[swtch][i] == 1) {
                     clockwises[i] += 3;
-                    if (clockwises[i] == 15) clockwises[i] =3;
+                    if (clockwises[i] == 15) clockwises[i] = 3;
                 }
             }
         }
-        
+
         private int solve(int swtch) {
             if (swtch == NUM_OF_SWITCHES) return areAligned() ? 0 : INF;
-            
+
             int result = INF;
 
-            
             for (int i = 0; i < 4; i++) {
                 result = Math.min(result, i + solve(swtch + 1));
                 push(swtch);
             }
-            
+
             return result;
         }
     }

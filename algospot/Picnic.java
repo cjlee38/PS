@@ -73,8 +73,9 @@ public class Picnic {
             return ret;
         }
 
-        private int countPairings( boolean[] paired) {
-            int target = isAllPaired(paired);
+        private int countPairings(boolean[] paired) {
+
+            int target = findTarget(paired);
             if (target == -1) return 1;
 
             int ret = 0;
@@ -89,7 +90,7 @@ public class Picnic {
             return ret;
         }
 
-        public int isAllPaired(boolean[] paired) {
+        public int findTarget(boolean[] paired) {
             int target = -1;
             for (int i = 0; i < n; ++i) {
                 if (!paired[i]) {
