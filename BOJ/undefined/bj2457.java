@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.undefined;
 
 import java.util.Scanner;
 import java.util.HashMap;

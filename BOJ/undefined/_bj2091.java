@@ -1,10 +1,7 @@
-package BOJ;
+package BOJ.undefined;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class _bj2091 {
     static Solution2091 init() throws IOException {

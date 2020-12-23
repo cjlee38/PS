@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.undefined;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,26 +24,28 @@ public class bj1010 {
             System.out.println(result);
         }
     }
+
+    static class Solution1010 {
+        private String left;
+        private String right;
+
+        public Solution1010(String left, String right) {
+            this.left = left;
+            this.right = right;
+        }
+
+        public BigInteger run() {
+            BigInteger n = new BigInteger(right);
+            BigInteger r = new BigInteger(left);
+
+            return factorial(n).divide(factorial(n.subtract(r)).multiply(factorial(r)));
+        }
+
+        public BigInteger factorial(BigInteger n) {
+            return n.equals(BigInteger.ZERO) ? BigInteger.ONE : n.multiply(factorial(n.subtract(BigInteger.ONE)));
+        }
+
+    }
+
 }
 
-class Solution1010 {
-    private String left;
-    private String right;
-
-    public Solution1010(String left, String right) {
-        this.left = left;
-        this.right = right;
-    }
-
-    public BigInteger run() {
-        BigInteger n = new BigInteger(right);
-        BigInteger r = new BigInteger(left);
-
-        return factorial(n).divide(factorial(n.subtract(r)).multiply(factorial(r)));
-    }
-
-    public BigInteger factorial(BigInteger n) {
-        return n.equals(BigInteger.ZERO) ? BigInteger.ONE : n.multiply(factorial(n.subtract(BigInteger.ONE)));
-    }
-
-}
