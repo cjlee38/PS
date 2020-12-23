@@ -13,5 +13,20 @@ public class bj2908 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
+
+
+        int A = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+        int B = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+
+        if (A > B) {
+            bw.write(A + "\n");
+        } else {
+            bw.write(B + "\n");
+        }
+
+        bw.flush();
+        bw.close();
     }
+
+
 }
