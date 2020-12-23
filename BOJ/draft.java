@@ -13,5 +13,18 @@ public class draft {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
+
+
+        bw.flush();
+        bw.close();
+    }
+
+    static class Solution {
+
+
+        public int run() {
+
+            return -1;
+        }
     }
 }
