@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 /**
- * uri =
- * name =
+ * uri = https://www.acmicpc.net/problem/1436
+ * name = 팰린드롬 수
  */
 
 public class bj1259 {
