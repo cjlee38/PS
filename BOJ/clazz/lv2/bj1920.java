@@ -34,6 +34,7 @@ public class bj1920 {
         for (int r : result) {
             bw.write(r + "\n");
         }
+
         bw.flush();
         bw.close();
     }
