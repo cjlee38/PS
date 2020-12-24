@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 /**
- * uri =
+ * uri = https://www.acmicpc.net/problem/
  * name =
  */
 
