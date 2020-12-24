@@ -28,5 +28,4 @@ public class bj2751 {
         bw.flush();
         bw.close();
     }
-
 }
