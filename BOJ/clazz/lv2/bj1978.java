@@ -5,20 +5,24 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
- * uri = https://www.acmicpc.net/problem/1929
- * name = 소수 구하기
+ * uri = https://www.acmicpc.net/problem/1978
+ * name = 소수 찾기
  */
 
-public class bj1929 {
+public class bj1978 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int m = Integer.parseInt(st.nextToken());
-        int n = Integer.parseInt(st.nextToken());
+        for(int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
 
-        boolean[] sieve = new boolean[n + 1];
+        boolean[] sieve = new boolean[1000 + 1];
         Arrays.fill(sieve, true);
         sieve[0] = sieve[1] = false;
 
@@ -28,15 +32,26 @@ public class bj1929 {
                     sieve[j] = false;
                 }
             }
-
         }
 
-        for (int i = m; i <= n; i++) {
-            if (sieve[i]) bw.write(i + "\n");
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (sieve[arr[i]]) count++;
         }
+
+        bw.write(count + "\n");
+
 
         bw.flush();
         bw.close();
     }
 
+    static class Solution {
+
+
+        public int run() {
+
+            return -1;
+        }
+    }
 }
