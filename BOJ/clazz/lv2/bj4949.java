@@ -17,7 +17,6 @@ public class bj4949 {
         while (true) {
             String s = br.readLine();
             if (s.equals(".")) break;
-
             if (isBalanced(s)) bw.write("yes\n");
             else bw.write("no\n");
         }
