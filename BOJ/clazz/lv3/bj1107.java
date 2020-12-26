@@ -3,13 +3,12 @@ package BOJ.clazz.lv3;
 import java.io.*;
 import java.util.StringTokenizer;
 
-// review
-
 /**
  * uri = https://www.acmicpc.net/problem/1107
  * name = 리모컨
  */
 
+// review
 public class bj1107 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
