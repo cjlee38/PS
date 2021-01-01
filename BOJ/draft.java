@@ -17,17 +17,16 @@ public class draft {
         int n = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-
         bw.flush();
         bw.close();
     }
 
     static class Solution {
 
-
         public int run() {
 
             return -1;
         }
+
     }
 }
