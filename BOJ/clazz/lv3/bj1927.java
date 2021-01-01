@@ -31,12 +31,4 @@ public class bj1927 {
         bw.close();
     }
 
-    static class Solution {
-
-        public int run() {
-
-            return -1;
-        }
-
-    }
 }
