@@ -42,13 +42,4 @@ public class bj1764 {
         bw.flush();
         bw.close();
     }
-
-    static class Solution {
-
-
-        public int run() {
-
-            return -1;
-        }
-    }
 }
