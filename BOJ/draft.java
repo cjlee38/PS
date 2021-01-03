@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 /**
  * uri = https://www.acmicpc.net/problem/
  * name =
+ * tier =
  */
 
 public class draft {
