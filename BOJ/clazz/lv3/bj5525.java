@@ -55,10 +55,7 @@ public class bj5525 {
                     Ocount = 0;
                 }
             }
-
-
             return ans;
         }
-
     } // end of class
 }
