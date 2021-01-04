@@ -39,10 +39,6 @@ public class bj2630 {
         public static final int WHITE = 0;
         public static final int BLUE = 1;
 
-//        public static final int[] dx = new int[]{-1, }
-
-
-
         public Solution(int n, int[][] paper) {
             this.n = n;
             this.paper = paper;
