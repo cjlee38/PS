@@ -197,9 +197,7 @@ public class bj16236 {
 
             // if fish is null, distance is -1, else distance
             Collections.sort(fishes);
-            if (fishes.size() == 0) return -1;
-            else return baby.eat(fishes.get(0), map);
-
+            return fishes.size() == 0 ? -1 : baby.eat(fishes.get(0), map);
 
         }
 
