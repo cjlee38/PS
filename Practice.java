@@ -2,18 +2,16 @@ import java.util.*;
 
 public class Practice {
     public static void main(String[] args) {
-        int s = 3;
-        int[] arr = {1, 744, 755, 4, 897, 902, 890, 6, 777};
+        int[] a = new int[]{1, 2, 3};
+        int[] b = new int[]{4, 5, 6};
 
-        int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        b = a;
+
+        b[2] = 99;
+
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
         }
-
-        sum /= arr.length;
-        sum /= s;
-
-        System.out.println("sum = " + sum);
 
     }
 
