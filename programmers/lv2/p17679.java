@@ -1,7 +1,5 @@
 package programmers.lv2;
 
-import org.junit.jupiter.api.Test;
-
 // 프로그래머스 - [1차] 프렌즈4블록
 public class p17679 {
     public static void main(String[] args) {
