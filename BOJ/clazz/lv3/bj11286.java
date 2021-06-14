@@ -30,13 +30,4 @@ public class bj11286 {
         bw.flush();
         bw.close();
     }
-
-    static class Solution {
-
-        public int run() {
-
-            return -1;
-        }
-
-    } // end of class
 }
