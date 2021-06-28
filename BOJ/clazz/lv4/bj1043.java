@@ -10,7 +10,6 @@ import java.util.StringTokenizer;
  * tier = gold 4
  */
 
-// unsolved
 public class bj1043 {
 
     public static void main(String[] args) throws IOException {
@@ -50,11 +49,11 @@ public class bj1043 {
 
     static class Solution {
 
-        private int n;
-        private int m;
-        private int[] people;
-        private boolean[] truth;
-        private int[][] parties;
+        private int n; // num of entire people
+        private int m; // num of parties
+        private int[] people; // group
+        private boolean[] truth; // people who know the truth
+        private int[][] parties; // array of parties and people who participated in those parties
 
         public Solution(int n, int m, int[] people, boolean[] truth, int[][] parties) {
             this.n = n;
@@ -65,8 +64,29 @@ public class bj1043 {
         }
 
         public int run() {
-            // self-poiniting
-            for (int i = 0; i < people.length; i++) people[i] = i;
+            int ans = 0;
+            boolean beQuiet = false;
+
+            holdParty();
+
+            for (int[] party : parties) {
+                for (int person : party) {
+                    if (isAwareTruth(person)) {
+                        beQuiet = true;
+                        break;
+                    }
+                }
+                if (beQuiet)
+                    beQuiet = false;
+                else
+                    ans++;
+            }
+            return ans;
+        }
+
+        private void holdParty() {
+            for (int i = 0; i < people.length; i++)
+                people[i] = i;
 
             for (int[] party : parties) {
                 if (party.length < 2) continue;
@@ -74,12 +94,16 @@ public class bj1043 {
                     union(party[i], party[i + 1]);
                 }
             }
+        }
 
-            for (int i = 0; i < people.length; i++) {
-                System.out.println(people[i] + " ");
+        private boolean isAwareTruth(int person) {
+            int parent = find(person);
+            for (int i = 0; i < truth.length; i++) {
+                if (truth[i] && find(i) == parent) {
+                    return true;
+                }
             }
-
-            return -1;
+            return false;
         }
 
         private void union(int a, int b) {
