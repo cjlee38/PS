@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 /**
  * uri = https://www.acmicpc.net/problem/15663
  * name = N과 M (9)
- * tier = silver 3
+ * tier = silver 2
  */
 
 public class bj15663 {
