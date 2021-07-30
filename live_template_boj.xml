@@ -1,0 +1,17 @@
+<templateSet group="-*- custom -*-">
+  <template name="psboj" value="import java.io.*;&#10;import java.util.StringTokenizer;&#10;&#10;/**&#10; * uri = https://www.acmicpc.net/problem/$NUMBER$&#10; * name = $NAME$&#10; * tier = $TIER$&#10; * date = $DATE$&#10; */&#10;&#10;public class bj$NUMBER$ {&#10;&#10;    private static StringTokenizer st;&#10;&#10;    public static void main(String[] args) throws IOException {&#10;        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));&#10;            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));) {&#10;            &#10;            int n = bInt(br);&#10;            st = tokenize(br);&#10;        } catch (Exception e) {&#10;            e.printStackTrace();&#10;        }&#10;    }&#10;&#10;    private static StringTokenizer tokenize(BufferedReader br) throws IOException {&#10;        return new StringTokenizer(br.readLine());&#10;    }&#10;&#10;    private static int bInt(BufferedReader br) throws IOException {&#10;        return Integer.parseInt(br.readLine());&#10;    }&#10;&#10;    private static int sInt(StringTokenizer st) {&#10;        return Integer.parseInt(st.nextToken());&#10;    }&#10;&#10;    static class Solution {&#10;&#10;        public int run() {&#10;&#10;            return -1;&#10;        }&#10;&#10;    } // end of class&#10;}&#10;" description="problemsolveing,boj" toReformat="false" toShortenFQNames="true">
+    <variable name="NUMBER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TIER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DATE" expression="date(&quot;Y-MM-d, E, H:m&quot;)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="tboj" value="import BOJ.StreamHandlerForTest;&#10;import org.junit.jupiter.params.ParameterizedTest;&#10;import org.junit.jupiter.params.provider.*;&#10;import java.util.stream.Stream;&#10;&#10;class bj$NUMBER$Test {&#10;&#10;    private StreamHandlerForTest handler;&#10;&#10;    @ParameterizedTest&#10;    @MethodSource(&quot;provideParameters&quot;)&#10;    public void test(String input, String output) throws Exception {&#10;        // given&#10;        handler = new StreamHandlerForTest(input);&#10;&#10;        // when&#10;        bj$NUMBER$.main(new String[]{}); // 테스트 실행&#10;&#10;        // then&#10;        assertEquals(output, handler.get());&#10;    }&#10;&#10;    private static Stream&lt;Arguments&gt; provideParameters() {&#10;        return Stream.of(&#10;                Arguments.of(&quot;&quot;, &quot;&quot;),&#10;                Arguments.of(&quot;&quot;, &quot;&quot;)&#10;        );&#10;    }&#10;}" toReformat="false" toShortenFQNames="true">
+    <variable name="NUMBER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
