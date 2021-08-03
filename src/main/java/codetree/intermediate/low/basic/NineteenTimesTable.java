@@ -23,6 +23,4 @@ public class NineteenTimesTable {
             bw.close();
         }
     }
-
-
 }
