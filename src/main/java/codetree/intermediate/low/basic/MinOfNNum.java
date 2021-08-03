@@ -15,7 +15,7 @@ public class MinOfNNum {
             StringTokenizer st = new StringTokenizer(br.readLine());
 
             int min = Integer.MAX_VALUE;
-            int cnt = 1;
+            int cnt = 0;
             for (int i = 0; i < n; i++) {
                 int x = Integer.parseInt(st.nextToken());
                 if (min > x) {
