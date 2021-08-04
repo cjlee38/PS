@@ -2,22 +2,30 @@ package codetree.intermediate.low.basic.normalsort;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
-public class GroupOfPairs {
+public class DetermineSameWord {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int n = Integer.parseInt(br.readLine());
-        int[] arr = getArray(2 * n, br);
+        String a = br.readLine();
+        String b = br.readLine();
 
-        Arrays.sort(arr);
-        int max = -1;
-        for (int i = 0; i < n; i++)
-            max = Math.max(max, arr[i] + arr[arr.length - i - 1]);
+        Map<Integer, Long> aMap = a.chars()
+                .boxed()
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting()));
 
-        bw.write(max + "");
+        Map<Integer, Long> bMap = b.chars()
+                .boxed()
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+
+
+        bw.write(aMap.equals(bMap) ? "Yes" : "No");;
+
 
         bw.flush();
         bw.close();
