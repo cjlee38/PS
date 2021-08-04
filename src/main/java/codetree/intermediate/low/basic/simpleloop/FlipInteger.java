@@ -1,4 +1,4 @@
-package codetree.intermediate.low.basic;
+package codetree.intermediate.low.basic.simpleloop;
 
 import java.io.*;
 

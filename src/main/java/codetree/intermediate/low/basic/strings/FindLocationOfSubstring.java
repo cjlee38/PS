@@ -1,29 +1,25 @@
-package codetree.intermediate.low.basic;
+package codetree.intermediate.low.basic.strings;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class KeepRemovingString {
+public class FindLocationOfSubstring {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         String str = br.readLine();
         String sub = br.readLine();
+        int idx = -1;
 
-        while (true) {
-            int idx = -1;
-            for (int i = 0; i < str.length() - sub.length() + 1; i++) {
-                if (isMatch(str, sub, i)) {
-                    idx = i;
-                    break ;
-                }
+        for (int i = 0; i < str.length() - sub.length() + 1; i++) {
+            if (isMatch(str, sub, i)) {
+                idx = i;
+                break ;
             }
-            if (idx == -1) break;
-            str = str.substring(0, idx) + str.substring(idx + sub.length());
         }
+        bw.write(idx + "");
 
-        bw.write(str);
         bw.flush();
         bw.close();
     }

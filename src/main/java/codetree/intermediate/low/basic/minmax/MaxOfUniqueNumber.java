@@ -1,4 +1,4 @@
-package codetree.intermediate.low.basic;
+package codetree.intermediate.low.basic.minmax;
 
 import java.io.*;
 import java.util.*;

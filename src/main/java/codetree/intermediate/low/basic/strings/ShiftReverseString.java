@@ -1,4 +1,4 @@
-package codetree.intermediate.low.basic;
+package codetree.intermediate.low.basic.strings;
 
 import java.io.*;
 import java.util.StringTokenizer;
