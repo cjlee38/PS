@@ -1,4 +1,4 @@
-package codetree.intermediate.low.backtracking;
+package codetree.intermediate.low.backtracking.minn;
 
 import java.io.*;
 import java.util.ArrayList;
