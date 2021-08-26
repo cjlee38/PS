@@ -1,7 +1,5 @@
 package programmers.lv2;
 
-import com.sun.source.tree.UsesTree;
-
 import java.util.*;
 
 public class p42839 {
