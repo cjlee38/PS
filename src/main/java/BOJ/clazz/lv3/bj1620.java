@@ -16,6 +16,7 @@ public class bj1620 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
+
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         Map<Integer, String> map = new HashMap<>();

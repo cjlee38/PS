@@ -3,9 +3,9 @@ package BOJ.undefined;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-// 백준 - 미세먼지 안녕!
 public class bj17144 {
 
     static Solution17144 init() throws IOException {
@@ -55,8 +55,10 @@ class Solution17144 {
 
         for (int i=0; i<T; i++) {
             dustSpread();
+            print();
             posA.clean(map);
             posB.clean(map);
+            print();
         }
 
         answer = getResult();
@@ -155,8 +157,14 @@ class Solution17144 {
                 }
             }
         }
-
         return result;
+    }
+
+    public void print() {
+        for (int i = 0; i < R; i++) {
+            System.out.println(Arrays.toString(map[i]));
+        }
+        System.out.println();
     }
 
 }
@@ -215,12 +223,14 @@ class AirCleaner {
         // go up or down
         if (clockwise == CLOCKWISE) {
             for ( ; x>X ; x--) {
+                if (map[x][y] == -1) continue;
                 cur = map[x][y];
                 map[x][y] = prev;
                 prev = cur;
             }
         } else {
             for ( ; x<X ; x++) {
+                if (map[x][y] == -1) continue;
                 cur = map[x][y];
                 map[x][y] = prev;
                 prev = cur;
