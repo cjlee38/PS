@@ -1,4 +1,4 @@
-package BOJ.tier.bronze;
+package BOJ.tag.implementation;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,8 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 import java.util.stream.Stream;
 
-
-class bj5543Test {
+class bj3613Test {
 
     private StreamHandlerForTest handler;
 
@@ -19,7 +18,7 @@ class bj5543Test {
         handler = new StreamHandlerForTest(input);
 
         // when
-        bj5543.main(new String[]{}); // 테스트 실행
+        bj3613.main(new String[]{}); // 테스트 실행
 
         // then
         assertEquals(output, handler.get());
@@ -27,16 +26,16 @@ class bj5543Test {
 
     private static Stream<Arguments> provideParameters() {
         return Stream.of(
-                Arguments.of("800\n" +
-                        "700\n" +
-                        "900\n" +
-                        "198\n" +
-                        "330", "848"),
-                Arguments.of("1999\n" +
-                        "1999\n" +
-                        "100\n" +
-                        "189\n" +
-                        "100", "150")
+                Arguments.of("toCpp", "to_cpp"),
+                Arguments.of("cpp_to_java", "cppToJava"),
+                Arguments.of("Error", "Error!"),
+                Arguments.of("name", "name"),
+                Arguments.of("bAEKJOON", "b_a_e_k_j_o_o_n"),
+                Arguments.of("b_a_e_k_j_o_o_n", "bAEKJOON"),
+                Arguments.of("mA_in", "Error!"),
+                Arguments.of("_is_error", "Error!"),
+                Arguments.of("is_error_", "Error!"),
+                Arguments.of("what__if", "Error!")
         );
     }
 }
