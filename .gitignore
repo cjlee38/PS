@@ -2,3 +2,9 @@
 /out
 /src/main/java/_hidden/
 /target/
+
+kotlin/.gradle
+kotlin/build
+**/.idea
+.idea/
+.DS_Store
