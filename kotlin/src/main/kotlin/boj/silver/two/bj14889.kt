@@ -1,4 +1,4 @@
-package silver.two
+package boj.silver.two
 
 import kotlin.math.abs
 import kotlin.math.min
@@ -13,7 +13,7 @@ fun main() {
 
 
     val visited = range.map { false }.toMutableList()
-    start(board, 0,  0, visited, N/2)
+    start(board, 0,  0, visited, N /2)
     println(ans)
 }
 

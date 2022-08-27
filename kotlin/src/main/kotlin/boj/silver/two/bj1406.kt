@@ -1,4 +1,4 @@
-package silver.two
+package boj.silver.two
 
 import java.util.Stack
 

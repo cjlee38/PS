@@ -1,4 +1,4 @@
-package silver.two
+package boj.silver.two
 
 data class Picture(val number: Int, var age: Int, var count: Int)
 

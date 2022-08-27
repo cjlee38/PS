@@ -1,4 +1,4 @@
-package silver.two
+package boj.silver.two
 
 fun main() {
     val N = readln().toInt()

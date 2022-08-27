@@ -1,4 +1,4 @@
-package silver.one
+package boj.silver.one
 
 import kotlin.math.max
 import kotlin.math.min
