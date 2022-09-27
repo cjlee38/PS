@@ -2,7 +2,7 @@ package boj.silver.two
 
 data class Picture(val number: Int, var age: Int, var count: Int)
 
-fun replace(pictures: MutableList<Picture>, vote: Int, age: Int) {
+private fun replace(pictures: MutableList<Picture>, vote: Int, age: Int) {
     val filtered = pictures.filter { picture -> picture.count == pictures.minOf { it.count } }
     val rmIndex =
         if (filtered.size == 1) pictures.indexOf(filtered[0]) else pictures.indexOfFirst { picture -> picture.age == filtered.minOf { it.age } }

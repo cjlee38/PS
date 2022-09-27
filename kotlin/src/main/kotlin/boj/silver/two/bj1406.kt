@@ -2,16 +2,16 @@ package boj.silver.two
 
 import java.util.Stack
 
-fun moveCursor(source: Stack<Char>, dest: Stack<Char>) {
+private fun moveCursor(source: Stack<Char>, dest: Stack<Char>) {
     if (source.empty()) return
     dest.push(source.pop())
 }
 
-fun delete(left: Stack<Char>) {
+private fun delete(left: Stack<Char>) {
     if (!left.empty()) left.pop()
 }
 
-fun insert(left: Stack<Char>, command: String) {
+private fun insert(left: Stack<Char>, command: String) {
     val split = command.split(" ")
     left.push(split[1][0])
 }

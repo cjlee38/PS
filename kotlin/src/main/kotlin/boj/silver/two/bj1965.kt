@@ -19,7 +19,7 @@ fun main() {
     println(ret)
 }
 
-fun binarySearch(dp: MutableList<Int>, low: Int, high: Int, number: Int): Int {
+private fun binarySearch(dp: MutableList<Int>, low: Int, high: Int, number: Int): Int {
     if (low == high) return low
 
     val mid = (low + high) / 2

@@ -10,7 +10,7 @@ fun main() {
     }
 }
 
-fun solve(x: Int, y: Int): Int {
+private fun solve(x: Int, y: Int): Int {
     val sqrt = sqrt((y - x).toDouble())
     val ans = sqrt.toInt() * 2 // peak * 2
     val fraction = sqrt.rem(1)
