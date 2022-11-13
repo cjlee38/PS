@@ -14,7 +14,7 @@ fun main() {
     recursive(0, chars, visited, L, C)
 }
 
-val vowels = listOf<String>("a", "e", "i", "o", "u")
+private val vowels = listOf<String>("a", "e", "i", "o", "u")
 
 private fun recursive(index: Int, chars: List<String>, visited: BooleanArray, L: Int, C: Int) {
     if (L == 0) {

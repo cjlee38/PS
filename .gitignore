@@ -8,3 +8,5 @@ kotlin/build
 **/.idea
 .idea/
 .DS_Store
+
+**/private
