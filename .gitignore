@@ -1,6 +1,5 @@
-/src/main/java/_hidden
+**/_hidden
 /out
-/src/main/java/_hidden/
 /target/
 
 kotlin/.gradle
@@ -10,3 +9,4 @@ kotlin/build
 .DS_Store
 
 **/private
+**/target
